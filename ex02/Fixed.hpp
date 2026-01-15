@@ -4,9 +4,7 @@
 #include <iostream>
 #include <cmath>
 
-
 class Fixed{
-
 
 	public:
 		Fixed();
@@ -23,14 +21,14 @@ class Fixed{
 		Fixed &operator*( const Fixed &other );
 		Fixed &operator/( const Fixed &other );
 
-		bool &operator>( const Fixed &other );
-		bool &operator<( const Fixed &other );
-		bool &operator>=( const Fixed &other );
-		bool &operator<=( const Fixed &other );
-		bool &operator==( const Fixed &other );
-		bool &operator!=( const Fixed &other );
+		bool operator>( const Fixed &other );
+		bool operator<( const Fixed &other );
+		bool operator>=( const Fixed &other );
+		bool operator<=( const Fixed &other );
+		bool operator==( const Fixed &other );
+		bool operator!=( const Fixed &other );
 
-		Fixed &increment++( const Fixed &other );
+		// Fixed &increment++( const Fixed &other );
 
 
 		int getRawBits( void ) const;
