@@ -49,5 +49,5 @@ std::ostream &operator<<(std::ostream &out, const Fixed &data){
 }
 
 Fixed::~Fixed(){
-	std::cout << "Deconstructor called\n";
+	std::cout << "Destructor called\n";
 }
