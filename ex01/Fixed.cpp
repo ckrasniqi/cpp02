@@ -6,42 +6,25 @@ Fixed::Fixed() : fixedPointValue(0){
 
 Fixed::Fixed(const Fixed &other){
 	std::cout << "Copy constructor called\n";
+	fixedPointValue = other.getRawBits();
 }
 
 Fixed::Fixed( const int N){
-//A constructor that takes a constant integer as a parameter.
-//It converts it to the corresponding fixed-point value. The fractional bits value
-//should be initialized to 8, like in exercise 00.
 	std::cout << "Int constructor called\n";
-
+	fixedPointValue = N << fractionalBits;
 }
 
 Fixed::Fixed( const float N){
-	//A constructor that takes a constant floating-point number as a parameter.
-	//It converts it to the corresponding fixed-point value. The fractional bits value
-	//should be initialized to 8, like in exercise 00.
-	std::cout << "Float constructor called\n"
-}
-
-float Fixed::toFloat ( void ) const {
-
+	std::cout << "Float constructor called\n";
+	fixedPointValue = 2 * roundf(N * 256);
 }
 
 int Fixed::toInt( void ) const{
-
+	return fixedPointValue >> fractionalBits;
 }
 
-Fixed &Fixed::operator=(const Fixed &other){
-	std::cout << "Copy assignment operator called\n";
-
-	if (this != &other)
-		this->setRawBits(other.getRawBits());
-	return *this;
-}
-
-
-Fixed &Fixed::operator<<( const Fixed &other ){
-
+float Fixed::toFloat ( void ) const {
+	return fixedPointValue / 256.0;
 }
 
 int	Fixed::getRawBits( void ) const{
@@ -51,6 +34,12 @@ int	Fixed::getRawBits( void ) const{
 void	Fixed::setRawBits( int const raw ){
 	this->fixedPointValue = raw;
 }
+
+std::ostream &operator<<(std::ostream &out, const Fixed &data){
+	out << data.toFloat();
+	return out;
+}
+
 
 Fixed::~Fixed(){
 

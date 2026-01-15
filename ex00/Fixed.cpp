@@ -3,7 +3,8 @@
 Fixed::Fixed() : fixedPointValue(0){
 	std::cout << "Default constructor called\n";
 }
-// we use a reference to a avoid an infinite loop
+
+// we use a reference to avoid an infinite loop
 // where other without '&' would call itself forever
 Fixed::Fixed(const Fixed &other){
 	std::cout << "Copy constructor called\n";
