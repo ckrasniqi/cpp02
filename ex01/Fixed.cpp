@@ -27,7 +27,7 @@ float Fixed::toFloat ( void ) const {
 	return (float)this->fixedPointValue / (1 << fractionalBits);
 }
 
-Fixed &Fixed::operator=(const Fixed &other){
+Fixed &Fixed::operator=( const Fixed &other ){
 	std::cout << "Copy assignment operator called\n";
 
 	if (this != &other)

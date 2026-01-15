@@ -16,10 +16,10 @@ class Fixed{
 		float toFloat( void ) const;
 
 		Fixed &operator=( const Fixed &other );
-		Fixed &operator+( const Fixed &other );
-		Fixed &operator-( const Fixed &other );
-		Fixed &operator*( const Fixed &other );
-		Fixed &operator/( const Fixed &other );
+		Fixed operator+( const Fixed &other ) const;
+		Fixed operator-( const Fixed &other ) const;
+		Fixed operator*( const Fixed &other ) const;
+		Fixed operator/( const Fixed &other ) const;
 
 		bool operator>( const Fixed &other );
 		bool operator<( const Fixed &other );
@@ -28,7 +28,8 @@ class Fixed{
 		bool operator==( const Fixed &other );
 		bool operator!=( const Fixed &other );
 
-		// Fixed &increment++( const Fixed &other );
+		Fixed &operator++( void );
+		Fixed &operator--( void );
 
 
 		int getRawBits( void ) const;
