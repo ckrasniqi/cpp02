@@ -18,8 +18,6 @@ class Fixed{
 	private:
 		int fixedPointValue;
 		static const int fractionalBits = 8;
-
-
 };
 
 

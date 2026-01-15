@@ -1,15 +1,20 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(){
+Fixed::Fixed() : fixedPointValue(0){
 	std::cout << "Default constructor called\n";
 }
-
+// we use a reference to a avoid an infinite loop
+// where other without '&' would call itself forever
 Fixed::Fixed(const Fixed &other){
 	std::cout << "Copy constructor called\n";
+	this->fixedPointValue = other.getRawBits();
 }
 
 Fixed &Fixed::operator=(const Fixed &other){
-	std::cout << "Copy assignment operator calle\n";
+	std::cout << "Copy assignment operator called\n";
+	if (this != &other)
+		this->setRawBits(other.getRawBits());
+	return *this;
 }
 
 Fixed::~Fixed(){
@@ -18,9 +23,9 @@ Fixed::~Fixed(){
 
 int	Fixed::getRawBits( void ) const{
 	std::cout << "getRawBits member function called\n";
-	return 1;
+	return this->fixedPointValue;
 }
 
-void	setRawBits( int const raw ){
-
+void	Fixed::setRawBits( int const raw ){
+	this->fixedPointValue = raw;
 }
