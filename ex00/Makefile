@@ -1,6 +1,6 @@
 NAME = MyFirstClassinOrthodoxCanonicalForm
 
-SRCS =  main.cpp 
+SRCS =  main.cpp Fixed.cpp
 
 
 OBJS = $(SRCS:.cpp=.o)

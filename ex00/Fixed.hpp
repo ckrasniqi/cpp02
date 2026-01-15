@@ -8,11 +8,16 @@ class Fixed{
 
 	public:
 		Fixed();
+		Fixed( const Fixed &other);
+		&operator=( const Fixed &other );
 		~Fixed();
-		int	getRawBits();
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
 
 
 	private:
+		int fixedPointValue;
+		static const int fractionalBits = 8;
 
 
 }
