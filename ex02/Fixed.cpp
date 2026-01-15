@@ -46,6 +46,7 @@ Fixed Fixed::operator*( const Fixed &other ) const {
 Fixed Fixed::operator/( const Fixed &other ) const {
 	return (Fixed)this->toFloat() / other.toFloat();
 }
+
 bool Fixed::operator>( const Fixed &other ){
 	return this->getRawBits() > other.getRawBits();
 }
@@ -70,6 +71,19 @@ bool Fixed::operator!=( const Fixed &other ){
 	return this->getRawBits() != other.getRawBits();
 }
 
+Fixed &Fixed::operator++( void ){
+	this->fixedPointValue++;
+	return *this;
+}
+
+Fixed Fixed::operator++( int ){
+	Fixed temp(*this);
+
+	this->fixedPointValue++;
+
+	return temp;
+}
+
 int	Fixed::getRawBits( void ) const{
 	return fixedPointValue;
 }
@@ -83,6 +97,4 @@ std::ostream &operator<<(std::ostream &out, const Fixed &data){
 	return out;
 }
 
-Fixed::~Fixed(){
-	std::cout << "Destructor called\n";
-}
+Fixed::~Fixed(){}

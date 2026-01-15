@@ -29,7 +29,7 @@ class Fixed{
 		bool operator!=( const Fixed &other );
 
 		Fixed &operator++( void );
-		Fixed &operator--( void );
+		Fixed operator++( int );
 
 
 		int getRawBits( void ) const;
