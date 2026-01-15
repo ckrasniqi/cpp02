@@ -29,5 +29,5 @@ void	Fixed::setRawBits( int const raw ){
 }
 
 Fixed::~Fixed(){
-	std::cout << "Destructor called\n";
+	std::cout << "Deconstructor called\n";
 }
