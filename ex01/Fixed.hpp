@@ -7,8 +7,14 @@
 class Fixed{
 
 	public:
+		Fixed();
+		Fixed( const Fixed &other );
 		Fixed( const int N );
 		Fixed( const float N );
+		float toFloat( void ) const;
+		int toInt( void ) const;
+		Fixed
+		Fixed &operator<<( const Fixed &other);
 		~Fixed();
 
 
