@@ -2,7 +2,6 @@ NAME = TowardsaAMoreUsefulFixed-PointNumberClass
 
 SRCS =  main.cpp Fixed.cpp
 
-
 OBJS = $(SRCS:.cpp=.o)
 
 CXX = c++

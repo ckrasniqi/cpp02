@@ -1,4 +1,4 @@
-NAME = MyFirstClassinOrthodoxCanonicalForm
+NAME = NowWeAreTalking
 
 SRCS =  main.cpp Fixed.cpp
 
