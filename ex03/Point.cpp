@@ -7,7 +7,9 @@ Point::Point( const float a, const float b ) : x(a), y(b){}
 
 Point::Point( const Point &other ) : x(other.x), y(other.y) {}
 
-Point	&Point::operator=( const Point &other ){}
+Point	&Point::operator=( const Point &other ){
+	return *this;
+}
 
 Fixed Point::getX( void ) const{
 	return this->x;
