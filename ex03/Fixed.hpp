@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cmath>
+#include "Point.hpp"
 
 class Fixed{
 
